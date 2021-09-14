@@ -9,17 +9,32 @@ class PasswordCheckerTest {
     PasswordChecker passwordChecker = new PasswordChecker();
 
     @Test
-    void TestIsLongEnough(){
-        assertTrue(passwordChecker.checkPassword("PasswordPassword5+"));
+    void TestPasswordIsCorrect(){
+        assertTrue(passwordChecker.checkPassword("PasswordPassword5+", "+-*.><?/", 8));
     }
 
     @Test
-    void TestHasUppercase(){
-        assertTrue(passwordChecker.checkPassword("Password5+"));
+    void TestPasswordIsNotEmpty(){
+        assertFalse(passwordChecker.checkPassword(""));
     }
 
     @Test
-    void TestHasSpecialCharacter(){
-        assertTrue(passwordChecker.checkPassword("Password5+"));
+    void TestPasswordIsNotNull(){
+        assertFalse(passwordChecker.checkPassword(null));
+    }
+
+    @Test
+    void TestPasswordIsLongEnough(){
+        assertTrue(passwordChecker.checkPassword("passwordPassword", 8));
+    }
+
+    @Test
+    void TestPasswordHasUppercase(){
+        assertTrue(passwordChecker.checkPassword("Password"));
+    }
+
+    @Test
+    void TestPasswordHasSpecialCharacter(){
+        assertTrue(passwordChecker.checkPassword("password+", "+-*.><?/"));
     }
 }

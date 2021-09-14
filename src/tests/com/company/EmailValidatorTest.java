@@ -9,22 +9,37 @@ class EmailValidatorTest {
     EmailValidator emailValidator = new EmailValidator();
 
     @Test
-    void TestHasAtSymbol(){
+    void TestEmailIsCorrect(){
         assertTrue(emailValidator.validateEmail("Email@google.com"));
     }
 
     @Test
-    void TestHasBannedSymbol(){
-        assertTrue(emailValidator.validateEmail("Email@google.com©"));
+    void TestEmailIsNotEmpty(){
+        assertFalse(emailValidator.validateEmail(""));
     }
 
     @Test
-    void TestHasCorrectDomain(){
+    void TestEmailIsNotNull(){
+        assertFalse(emailValidator.validateEmail(null));
+    }
+
+    @Test
+    void TestEmailHasAtSymbol(){
+        assertTrue(emailValidator.validateEmail("Email@"));
+    }
+
+    @Test
+    void TestEmailHasBannedSymbol(){
+        assertTrue(emailValidator.validateEmail("©mail@google.com"));
+    }
+
+    @Test
+    void TestEmailHasCorrectDomain(){
         assertTrue(emailValidator.validateEmail("Email@google.com"));
     }
 
     @Test
-    void TestHasCorrectTLD(){
+    void TestEmailHasCorrectTLD(){
         assertTrue(emailValidator.validateEmail("Email@google.com"));
     }
 }
