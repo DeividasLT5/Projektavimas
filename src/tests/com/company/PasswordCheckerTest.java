@@ -24,17 +24,17 @@ class PasswordCheckerTest {
     }
 
     @Test
-    void TestPasswordIsLongEnough(){
-        assertTrue(passwordChecker.checkPassword("passwordPassword", 8));
+    void TestPasswordIsNotLongEnough(){
+        assertFalse(passwordChecker.checkPassword("Passwo+", 8));
     }
 
     @Test
-    void TestPasswordHasUppercase(){
-        assertTrue(passwordChecker.checkPassword("Password"));
+    void TestPasswordDoesNotHaveUppercase(){
+        assertFalse(passwordChecker.checkPassword("password+"));
     }
 
     @Test
     void TestPasswordHasSpecialCharacter(){
-        assertTrue(passwordChecker.checkPassword("password+", "+-*.><?/"));
+        assertTrue(passwordChecker.checkPassword("Password&", "&+-*.><?/"));
     }
 }

@@ -24,22 +24,20 @@ class EmailValidatorTest {
     }
 
     @Test
-    void TestEmailHasAtSymbol(){
-        assertTrue(emailValidator.validateEmail("Email@"));
-    }
+    void TestEmailDoesNotHaveEtaSymbol(){ assertFalse(emailValidator.validateEmail("Emailgoogle.com")); }
 
     @Test
     void TestEmailHasBannedSymbol(){
-        assertTrue(emailValidator.validateEmail("©mail@google.com"));
+        assertFalse(emailValidator.validateEmail("©mail@google.com"));
     }
 
     @Test
-    void TestEmailHasCorrectDomain(){
-        assertTrue(emailValidator.validateEmail("Email@google.com"));
+    void TestEmailHasIncorrectDomain(){
+        assertFalse(emailValidator.validateEmail("Email@googe.com"));
     }
 
     @Test
-    void TestEmailHasCorrectTLD(){
-        assertTrue(emailValidator.validateEmail("Email@google.com"));
+    void TestEmailHasIncorrectTLD(){
+        assertFalse(emailValidator.validateEmail("Email@google.co"));
     }
 }
