@@ -1,0 +1,4 @@
+Testai buvo aiškūs ir patogūs, asmeniškai patiko, jog išskirstyti į skirtingus metodus, nereikalauja override.
+Negavau naudos iš telefono testų "TestCorrectForeignNumberLength" ir "TestCorrectForeignNumberPrefix", kadangi,
+   mano nuomone, jie tas pats kas ir "TestCorrectNumberLength" bei "TestCorrectNumberPrefix".
+Aš dar būčiau prirašęs isNull, isEmpty bei "visi kriterijai patvirtinti" testus patogumui.
