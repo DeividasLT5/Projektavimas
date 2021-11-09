@@ -1,5 +1,4 @@
-import main.EmailValidator;
-import org.junit.jupiter.api.BeforeEach;
+/*import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -32,4 +31,4 @@ public class EmailTest {
         assertTrue(emailValidator.hasBadTopLevelDomain("asd123@test.asdasd"));
     }
 
-}
+}*/
